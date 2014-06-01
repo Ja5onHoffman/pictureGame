@@ -1,0 +1,88 @@
+body {
+ /*	margin: 0px; */ 
+}
+
+nav ul {
+  z-index: 2;
+}
+
+/* #bodyDiv {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+  z-index: 0;
+} */ 
+
+#canvasDiv {
+  padding-top: 50px;
+}
+
+#canvasBody {
+  position: absolute;
+  /*width:100%;
+  height:100%; */ 
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+#canvasGameDiv {
+  z-index: 1;
+  width: 700px;
+  height: 700px;
+  margin: 0 auto;
+}
+
+#canvas {
+	background-image: url(220.jpg);
+  z-index: auto;
+  margin: 0 auto;
+  box-shadow: -20px -20px 20px 20px;
+}
+
+#score {
+  z-index: auto;
+}
+
+#nav {
+  position: fixed;
+  top: 30%;
+  padding-left: 0px;
+}
+
+#nav li {
+  display: block;
+  padding-bottom: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+#nav li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: arial;
+  padding: 5px;
+  padding-right: 15px;
+  background: rgba(0,0,0,0.8);
+}
+
+#nav li a:hover {
+  background: rgba(232,154,0,0.8); 
+  padding-right: 35px;
+  -webkit-transition: all 0.4s ease;
+}
+
+.sub {
+  display: none;
+}
+
+#nav li:hover .sub {
+  display: block;
+}
+
+#nav li:hover .sub li {
+  float: left;
+}
