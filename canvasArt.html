@@ -9,6 +9,14 @@
 </head>
 
 <body onload="init();">
+	<div id="overlay">
+		<form id="overlayForm">
+			<fieldset>
+			<input type="text" id="subAnswer" placeholder="Write your answer here">
+			<button id="subButton" type="submit">Submit</button>
+		</fieldset>
+		</form>
+	</div>
 	<nav>
 		<ul id="nav">
 			<li><a href="#">Home</a>
@@ -25,7 +33,9 @@
   		<canvas id="canvasBody" width="" height=""></canvas>
   	</div>
   		<div id="score">
+  		<h1>Score</h1>
   		<p id="zero">0</p>
+  		<button id="answer">Answer</button>
   	</div>
   	</div>
 </body>

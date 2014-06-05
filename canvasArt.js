@@ -12,6 +12,9 @@ $(document).keydown(function() {
 $(document).ready(function() {
 	$("#canvasBody").attr("width", $("html").width());
 	$("#canvasBody").attr("height", $("html").height());
+	$("#answer").click(function() {
+		$("#overlay").fadeIn();
+	})
 })
 
 function init() {
@@ -34,6 +37,7 @@ function draw() {
 	}
 	ctx.clearRect(350,350,25,25);
 }
+
 
 
 
