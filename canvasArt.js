@@ -1,12 +1,13 @@
 var ctx;
-dx = 350;
-dy = 350;
-score = 0;
+dx = 350,
+dy = 350,
+score = 0,
+answer = "",
+corrAnswer = "";
 
 $(document).keydown(onKeyDown);
 $(document).keydown(function() {
-	$('#zero').remove();
-	$('#score').html('<p>' + score + '</p>');
+	$("#score").text(score);
 })
 
 $(document).ready(function() {
@@ -14,8 +15,15 @@ $(document).ready(function() {
 	$("#canvasBody").attr("height", $("html").height());
 	$("#answer").click(function() {
 		$("#overlay").fadeIn();
-	})
-})
+	});
+}) 
+
+function correct() {
+	$("form").fadeOut();
+	$("#overlay").append("<div id='correct'><h1>Correct</h1></div>").fadeIn(true);
+}
+
+
 
 function init() {
 	ctx = $('#canvas')[0].getContext('2d');

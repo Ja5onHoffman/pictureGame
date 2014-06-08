@@ -31,7 +31,7 @@ nav ul {
   z-index: 10000;
 }
 
-#overlayForm {
+#overlayForm, #correct {
   margin: 0 auto;
   border-radius: 5px;
   background-color: rgba(100,100,100,0.8);
@@ -39,6 +39,12 @@ nav ul {
   width: 500px;
   opacity: 1;
 }
+
+#correct {
+  color: white;
+}
+
+
 
 fieldset {
   display: block;
@@ -86,7 +92,7 @@ fieldset {
   box-shadow: -20px -20px 20px 20px;
 }
 
-#score {
+#scoreBoard {
   position: absolute;
   top: 30%;
   left: 80%;
@@ -96,6 +102,7 @@ fieldset {
   border: 5px solid black;
   border-radius: 10px;
   background: white;
+  text-align: center;
 }
 
 #nav {
