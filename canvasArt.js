@@ -5,6 +5,8 @@ score = 0,
 answer = "",
 corrAnswer = "";
 
+var answer1 = ["dog", "puppy"]
+
 $(document).keydown(onKeyDown);
 $(document).keydown(function() {
 	$("#score").text(score);
@@ -16,17 +18,29 @@ $(document).ready(function() {
 	$("#answer").click(function() {
 		$("#overlay").fadeIn();
 	});
-}) 
+
+	$("#subAnswer").submit(function() {
+		_.contains(answer1, $("#subAnswer").val().toLowerCase() ? correct() : incorrect());
+	});
+})
 
 function correct() {
-	$("form").fadeOut();
-	$("#overlay").append("<div id='correct'><h1>Correct</h1></div>").fadeIn(true);
+	$("form").fadeOut(function() {
+		$("<div id='correct'><h1>Correct!</h1></div>").hide().appendTo("#overlay").fadeIn();
+	});
+}
+
+function incorrect() {
+	$("form").fadeOut(function() {
+		$("<div id='correct'><h1>Wrong!</h1></div>").hide().appendTo("#overlay").fadeIn();
+	});
 }
 
 
 
+
 function init() {
-	ctx = $('#canvas')[0].getContext('2d');
+	ctx = $("#canvas")[0].getContext('2d');
 	ctxBod = $("#canvasBody")[0].getContext('2d');
 	draw();
 	setInterval(background, 100);
