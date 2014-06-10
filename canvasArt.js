@@ -2,6 +2,8 @@ var ctx;
 dx = 350,
 dy = 350,
 score = 0,
+imageNum = 1,
+level = 0;
 answer = "",
 corrAnswer = "";
 
@@ -19,15 +21,29 @@ $(document).ready(function() {
 		$("#overlay").fadeIn();
 	});
 
-	$("#subAnswer").submit(function() {
-		_.contains(answer1, $("#subAnswer").val().toLowerCase() ? correct() : incorrect());
+	$("#overlayForm").on("submit", function(e) {
+		e.preventDefault();
+		if ($("#subAnswer").val().length) {
+			_.contains(answer1, $("#subAnswer").val().toLowerCase()) ? correct() : incorrect();
+		} else {
+			alert("Don't leave it blank!");
+		}
 	});
 })
 
 function correct() {
+	imageNum++;
+	level++;
 	$("form").fadeOut(function() {
 		$("<div id='correct'><h1>Correct!</h1></div>").hide().appendTo("#overlay").fadeIn();
 	});
+	draw();
+	$("#canvas").css({"background-image" : "url(image" + imageNum + ".jpg)"});
+	//youWon();
+}
+
+function youWon() {
+	// You won
 }
 
 function incorrect() {
@@ -35,9 +51,6 @@ function incorrect() {
 		$("<div id='correct'><h1>Wrong!</h1></div>").hide().appendTo("#overlay").fadeIn();
 	});
 }
-
-
-
 
 function init() {
 	ctx = $("#canvas")[0].getContext('2d');
@@ -59,9 +72,6 @@ function draw() {
 	}
 	ctx.clearRect(350,350,25,25);
 }
-
-
-
 
 function getRandomColor() {
 	var letters = '0123456789ABCDEF'.split('');
